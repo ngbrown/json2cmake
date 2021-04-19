@@ -196,7 +196,7 @@ def main():
 
     infile = 'compile_commands.json' if os.isatty(sys.stdin.fileno()) else '-'
     parser.add_argument(
-        'infile', nargs='?', type=argparse.FileType('r'), default=infile,
+        'infile', nargs='?', type=argparse.FileType('r', encoding='UTF-8'), default=infile,
         help="""
 path of the compilation database (default: compile_commands.json or stdin)
         """
