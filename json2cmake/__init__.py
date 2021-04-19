@@ -119,6 +119,7 @@ class CompilationDatabase(object):
 
         for (config, files) in self.targets.items():
             files = list(files)
+            files.sort();
             config = {k: v for (k, v) in config}
             name = os.path.basename(os.path.commonprefix(files).rstrip("/_"))
             name = re.sub(disallowed_characters, "", name)
